@@ -1,11 +1,13 @@
 package JogoDeDados;
 
-import java.util.Scanner;
 
+import java.util.Scanner;
 public class Jogo {
+	
 	private static Scanner input;
 		public static void main(String[] args) {
 			String nomeJogador;
+		
 			
 			input = new Scanner(System.in);
 			
@@ -15,4 +17,6 @@ public class Jogo {
 			
 			System.out.println(nomeJogador);
 		}
+		
+		
 }
