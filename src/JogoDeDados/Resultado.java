@@ -112,4 +112,16 @@ public class Resultado {
 			System.out.println("\n======================= Não houve ganhador =================================");
 		}
 	}
+	
+	public void zeraGanhador() {
+		for(int i = 0; i < this.arrayGanhedor.length;i++) {
+			if(this.arrayGanhedor[i] == null) {
+				continue;
+			}else {
+				this.arrayGanhedor = null;
+				}
+			}
+		}
+	
+	
 }

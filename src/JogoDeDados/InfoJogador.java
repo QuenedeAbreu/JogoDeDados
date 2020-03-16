@@ -40,8 +40,15 @@ public class InfoJogador extends Jogador {
 	
 
 	
-	
-	
+	public void zeraJogador() {
+		for(int i = 0 ;i <JogadorArray.length;i++) {
+			if(this.JogadorArray[i] == null) {
+				continue;
+			}else {
+			this.JogadorArray[i] = null;
+			}
+		}
+	}
 
 
 	

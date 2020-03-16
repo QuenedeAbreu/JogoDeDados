@@ -65,5 +65,14 @@ public class Dado {
 	}
 	
 	
+	public void zeraResultado() {
+		for(int i = 0;i < this.resultado.length;i++) {
+			if(this.resultado[i] == null) {
+				continue;
+			}else {
+				this.resultado = null;
+			}
+		}
+	}
 	
 }

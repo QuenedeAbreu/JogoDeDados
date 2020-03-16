@@ -17,10 +17,13 @@ public class Jogo {
 			Dado dado = new Dado();
 			Resultado resultado = new Resultado();
 			
-		
+				
 						
 			input = new Scanner(System.in);
 			do {
+				//jogador.zeraJogador();
+				//dado.zeraResultado();
+				//resultado.zeraGanhador();
 			
 			do {
 			System.out.println("Informe o nome do jogador: ");
