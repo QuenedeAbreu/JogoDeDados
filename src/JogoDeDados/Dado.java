@@ -70,7 +70,7 @@ public class Dado {
 			if(this.resultado[i] == null) {
 				continue;
 			}else {
-				this.resultado = null;
+				this.resultado[i] = null;
 			}
 		}
 	}

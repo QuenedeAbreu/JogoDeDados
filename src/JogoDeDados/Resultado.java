@@ -65,6 +65,7 @@ public class Resultado {
 					
 					this.arrayGanhedor[i] = new Resultado (dado.retornaArrayResultado()[i].getnomeJogador(),dado.retornaArrayResultado()[i].getDado01(),
 															dado.retornaArrayResultado()[i].getDado02(),dado.retornaArrayResultado()[i].getResultado());
+				
 				}
 				
 			}
@@ -85,7 +86,7 @@ public class Resultado {
 			}
 		}
 		
-		System.out.println("\n\n\n=============================Resultado do Jogo  ============================");
+		System.out.println("\n\n================================= Resultado da Rodada ===============================");
 		for(int i = 0;i < this.arrayGanhedor.length;i++ ) {
 			Resultado dados = this.arrayGanhedor[i];
 			if(dados == null) {continue;}
@@ -109,7 +110,7 @@ public class Resultado {
 			}		
 		}
 		if(contGanhador == 0) {
-			System.out.println("\n======================= Não houve ganhador =================================");
+			System.out.println("\n================================= Não houve ganhador ================================\n\n");
 		}
 	}
 	
@@ -118,7 +119,7 @@ public class Resultado {
 			if(this.arrayGanhedor[i] == null) {
 				continue;
 			}else {
-				this.arrayGanhedor = null;
+				this.arrayGanhedor[i] = null;
 				}
 			}
 		}

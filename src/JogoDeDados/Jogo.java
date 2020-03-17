@@ -2,73 +2,63 @@ package JogoDeDados;
 
 
 
-import java.util.Scanner;
+//import java.util.Scanner;
 public class Jogo {
 	
-	private static Scanner input;
+	//private static Scanner input;
 		public static void main(String[] args) {
-			String nomeJogador;
-			int i=0;
-			//int contJogador = 0;
-			char s;
-			String J = "d";
-			char jogarDeNovo ;
+			//input = new Scanner(System.in);
+			// Variavel conta quantas rodadas foram jogadas
+			int contJogo = 0;
+			
+			
+			//char jogarDeNovo ;
+			
+			//Instancia os jogadores
 			InfoJogador jogador = new InfoJogador();
+			
+			//Instancia os dados da rodada
 			Dado dado = new Dado();
+			
+			//Instancia os resultados
 			Resultado resultado = new Resultado();
 			
 				
 						
-			input = new Scanner(System.in);
-			do {
+			
+			
 				//jogador.zeraJogador();
 				//dado.zeraResultado();
 				//resultado.zeraGanhador();
 			
-			do {
-			System.out.println("Informe o nome do jogador: ");
-							if(i>0) {
-							input.nextLine();
-							}
-							
-			nomeJogador = input.nextLine();
-						 
-			jogador.Inscrever(i, nomeJogador);
-			
-			i++;
-			System.out.println("Deseja Incluir mais um jogador?:  ");
-			s = input.next().charAt(0);
-			}while(s == 's' || s == 'S');
-			
-			
+			//Recebe todos os jogadores
+			jogador.recebeJogador(jogador);
 			
 			do {
-				int cont=0;
-				
-				for (int p = 0;p<jogador.retornaArray().length;p++) {
+			//zera o resultado da rodada
+			dado.zeraResultado();
 			
-			Jogador Jogador = jogador.retornaArray()[cont];
+			//zera o resultado dos ganhadores da rodada
+			resultado.zeraGanhador();
 			
-			if(Jogador == null)continue;
+			System.out.println("\n\n==================================== Nova Rodada ====================================\n");
 			
-			if (Jogador!=null) {
-				System.out.println("============ A vez de jogar é de: "+Jogador.getNome()+" =============");
-				System.out.println(Jogador.getNome()+" precione enter para jogar!");
-						if(cont == 0) {
-							input.nextLine();
-						}
-						input.nextLine();
-						dado.lancar(jogador,cont);
-						}
-						cont++;
-					}
-			}while(J == "");
+			//Chama a jogada de cada jogador
+			jogador.jogada(dado, jogador);
 			
-			resultado.ganhador(jogador,dado);	
+			//Inclui os ganhadores em array de ganhadores 			
+			resultado.ganhador(jogador,dado);
+			
+			//Mostra os ganhadores da rodada			
 			resultado.mostraGanhador();
 			
-			System.out.println("Deseja jogar novamente?  ");
-			jogarDeNovo = input.next().charAt(0);
-		}while(jogarDeNovo == 's' || jogarDeNovo == 'S');
+			
+			
+			//jogarDeNovo = input.next().charAt(0);
+			contJogo++;
+			System.out.println("\n\n");
+		}while(contJogo < 7  /* jogarDeNovo == 's' || jogarDeNovo == 'S'*/ );
+			
+			
 	}	
 }
