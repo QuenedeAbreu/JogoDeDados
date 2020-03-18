@@ -6,6 +6,8 @@ public class Resultado {
 		private int dado02;
 		private int resultado;
 		
+		
+		
 		Resultado [] arrayGanhedor = new Resultado[100];
 		
 		public Resultado(String nomeJogador, int dado01, int dado02, int resultado) {
@@ -66,6 +68,7 @@ public class Resultado {
 					this.arrayGanhedor[i] = new Resultado (dado.retornaArrayResultado()[i].getnomeJogador(),dado.retornaArrayResultado()[i].getDado01(),
 															dado.retornaArrayResultado()[i].getDado02(),dado.retornaArrayResultado()[i].getResultado());
 				
+					
 				}
 				
 			}
@@ -73,10 +76,9 @@ public class Resultado {
 		}
 		
 	}
-		
-		
+			
 	
-	public void mostraGanhador() {
+	public void mostraGanhador(int cont) {
 		int contGanhador = 0; 
 		for(int i = 0;i < this.arrayGanhedor.length;i++ ) {
 			Resultado dados = this.arrayGanhedor[i];
@@ -86,7 +88,7 @@ public class Resultado {
 			}
 		}
 		
-		System.out.println("\n\n================================= Resultado da Rodada ===============================");
+		System.out.println("\n\n================================= Resultado da "+cont+"º Rodada ===============================");
 		for(int i = 0;i < this.arrayGanhedor.length;i++ ) {
 			Resultado dados = this.arrayGanhedor[i];
 			if(dados == null) {continue;}
@@ -110,9 +112,63 @@ public class Resultado {
 			}		
 		}
 		if(contGanhador == 0) {
-			System.out.println("\n================================= Não houve ganhador ================================\n\n");
+			System.out.println("\n================================= Não houve ganhador ================================\n");
 		}
 	}
+	
+	
+	public void ordenaRanking(InfoJogador jogador) {
+		 
+	Jogador  aux;
+	
+	for(int i = 0; i < jogador.numeroJogadores(); i++){
+		
+		for(int j = i+1; j < jogador.numeroJogadores(); j++){
+
+			
+	         if(jogador.retornaArray()[i].getVitorias() < jogador.retornaArray()[j].getVitorias()){
+	     
+	            	aux = jogador.retornaArray()[i];
+	                jogador.retornaArray()[i] = jogador.retornaArray()[j];
+	                jogador.retornaArray()[j] = aux;
+	            		}
+	            		
+					}
+	        	}
+			
+	    
+	}
+	
+	
+	public void ganhadoresDoJogo(InfoJogador jogador) {
+		
+		int cont=0;
+		
+			for (int i = 0;i<jogador.retornaArray().length;i++) {
+		
+		Jogador Jogador = jogador.retornaArray()[cont];
+		
+		if(Jogador == null)continue;
+		
+		if (Jogador!=null) {
+		System.out.println("\n==================== Jogador "+Jogador.getNome()+" ==============================\n");
+		System.out.println("O id do jogador é: "+Jogador.getId());
+		System.out.println("O nome do jogador é: "+Jogador.getNome());
+		System.out.println("Numero de Vitorias do jogador: "+ Jogador.getVitorias());
+
+		System.out.println("\n====================================================================\n");
+		}
+		
+		cont++;
+	}
+	if(cont == 0) {
+		System.out.println("\nAinda não temos Jogadores cadastrados!\n");
+	}
+
+
+}
+	
+	
 	
 	public void zeraGanhador() {
 		for(int i = 0; i < this.arrayGanhedor.length;i++) {
