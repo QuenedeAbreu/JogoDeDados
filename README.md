@@ -12,3 +12,5 @@ Jogo de Dados feito com o proposito de complementar a N1 da matéria de POO.
 
 * Alunos: [José Quenede Abreu de Oliveira](https://www.facebook.com/quenede.abreu "Facebook Quenede Abreu") (6ºPeríodo - Sistemas de Informação)<br/>
 			[Donizete Dos Santos Furtado](https://www.facebook.com/donizete.furtado "Facebook Donizete Furtada") (6ºPeríodo - Sistemas de Informação)
+
+![](https://www.uninorteac.edu.br/static/images/ic-logo.png)
